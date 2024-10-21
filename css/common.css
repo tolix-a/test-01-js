@@ -1,0 +1,189 @@
+/* common */
+
+/* 헤더, 풋터
+텍스트, 색상, 효과, 버튼, 아이콘,
+콘텐츠(카드형태, 표, 폼, 로딩, 팝업...) */
+
+:root {
+    --color-point: #FFC800;
+    --pc-wid: 1280px;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    padding: 80px;
+    z-index: 2;
+    transition: .5s;
+}
+header.active{
+    padding:20px 80px;
+    background-color: rgba(0,0,0,0.6);
+}
+header>div{
+    max-width: var(--pc-wid);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+header>div>h1{}
+header>div>h1>a{}
+
+header>div>nav{}
+header>div>nav>ul{
+    display: flex;
+}
+header>div>nav>ul>li{
+    position: relative;
+}
+header>div>nav>ul>li>a{
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+
+header>div>nav>ul>li>div{
+    position: absolute;
+    left: 0; top: 100%;
+    width: 100%; 
+    text-align: center;
+    background-color: var(--color-point);
+    border-radius: 10px;
+    padding: 10px;
+}
+header>div>nav>ul>li>div>a{
+    display: block;
+}
+
+/* footer */
+footer {
+    padding: 60px 0;
+}
+
+footer > div {
+    max-width: var(--pc-wid);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer>div>p>img{width: 100%;}
+footer>div>p:nth-of-type(2)>a{
+    padding: 0 10px;
+    text-decoration: underline;
+}
+
+/* active */
+header>div>nav>ul>li:hover>a{
+    color:var(--color-point);
+}
+header>div>nav>ul>li>div{
+    opacity: 0;
+    transition: .5s;
+}
+header>div>nav>ul>li:hover>div{
+    opacity: 1;
+}
+
+/* 버튼 */
+.btn{
+    font-size: 1.5rem;
+    background-color: var(--color-point);
+    padding: 22px 50px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    pointer-events: fill; 
+    display: inline-block;
+}
+.btn:hover {
+    background-color: rgb(200, 156, 236);
+}
+
+/* 타이틀 */
+.title{
+    margin-bottom: 50px;
+    text-align: center;
+}
+.title > h2{
+    text-transform: uppercase;
+}
+.title > p {
+    margin-top: 10px;
+}
+
+
+/* 텍스트 생략 */
+.t-s1{
+    white-space: nowrap;    /*한 줄로 만들기*/
+    overflow: hidden;   /*줄 넘으면 가리기*/
+    text-overflow: ellipsis;    /*생략기호 ...*/
+}
+.t-s2{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* text-overflow: ellipsis; ... 생략기호 */
+}
+
+/* 배경색 */
+.bg-gray{
+    background-color: #f2f2f2;
+}
+.bg-dark{
+    background-color: #333;
+    color: white;
+}
+
+.bg-dark h2 {color: inherit;}
+
+/* 정렬 */
+.align-l{text-align: left;}
+.align-c{text-align: center;}
+.align-r{text-align: right;}
+
+/* 여백 */
+.m-t10{margin-top: 10px;}
+.m-t20{margin-top: 20px;}
+.m-t50{margin-top: 50px;}
+
+
+/* swiper */
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
